@@ -67,11 +67,13 @@ def make_toot(cfg):
 def extract_toot(toot):
 	toot = html.unescape(toot) # convert HTML escape codes to text
 	soup = BeautifulSoup(toot, "html.parser")
-	for lb in soup.select("br"): # replace <br> with linebreak
+	for lb in soup.select("br"): # replace <br> with linebreak ## changed to space
 		lb.replace_with(" ")
 
 	for p in soup.select("p"): # ditto for <p>
-		p.replace_with(" ")
+		#p.replace_with("\n") ## unwrap instead. works if there's only one p. If there are more p, solution next line
+		p.insert_before(" ") ## add a space before every p. not a very elegant solution, though
+		p.unwrap()
 
 	for ht in soup.select("a.hashtag"): # convert hashtags from links to text
 		ht.unwrap()
@@ -85,4 +87,5 @@ def extract_toot(toot):
 	text = re.sub(r"https://([^/]+)/(@[^\s]+)", r"\2@\1", text) # put mastodon-style mentions back in
 	text = re.sub(r"https://([^/]+)/users/([^\s/]+)", r"@\2@\1", text) # put pleroma-style mentions back in
 	text = text.rstrip("\n") # remove trailing newline(s)
+	text = text.lstrip(" ") ## remove initial space caused by p.insert_before(" ")
 	return text
