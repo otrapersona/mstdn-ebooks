@@ -68,10 +68,10 @@ def extract_toot(toot):
 	toot = html.unescape(toot) # convert HTML escape codes to text
 	soup = BeautifulSoup(toot, "html.parser")
 	for lb in soup.select("br"): # replace <br> with linebreak
-		lb.replace_with("\n")
+		lb.replace_with(" ")
 
 	for p in soup.select("p"): # ditto for <p>
-		p.replace_with("\n")
+		p.replace_with(" ")
 
 	for ht in soup.select("a.hashtag"): # convert hashtags from links to text
 		ht.unwrap()
