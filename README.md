@@ -1,4 +1,7 @@
+Warning: I (otrapersona) have made a few changes for my personal use case, it might or not work for you.
+
 # mstdn-ebooks
+
 **Lynnear Edition**
 
 This version makes quite a few changes from [the original](https://github.com/Jess3Jane/mastodon-ebooks), such as:
@@ -25,7 +28,7 @@ Like mstdn-ebooks, FediBooks is free, both as in free of charge and free to modi
 Secure fetch (aka authorised fetches, authenticated fetches, secure mode...) is *not* supported by mstdn-ebooks, and will fail to download any posts from users on instances with secure fetch enabled. For more information, see [this wiki page](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch).
 
 ## Install/usage Guide
-An installation and usage guide is available [here](https://cloud.lynnesbian.space/s/jozbRi69t4TpD95). It's primarily targeted at Linux, but it should be possible on BSD, macOS, etc. I've also put some effort into providing steps for Windows, but I can't make any guarantees as to its effectiveness.
+An installation and usage guide is available [here](https://cloud.lynnesbian.space/s/jozbRi69t4TpD95). It's primarily targeted at Linux, but it should be possible on BSD, macOS, etc. I've also put some effort into providing steps for Windows, but I can't make any guarantees as to its effectiveness. (otrapersona's note: [mirror](https://github.com/otrapersona/mstdn-ebooks/blob/master/Running%20your%20own%20mstdn-ebooks%20bot.md))
 
 ### Docker
 While there is a Docker version provided, it is **not guaranteed to work**. I personally don't use Docker and don't know how the Dockerfile works; it was create over a year ago by someone else and hasn't been updated since. It might work for you, it might not. If you'd like to help update the Dockerfile, please get in touch with me on the Fediverse.
